@@ -1,0 +1,26 @@
+<div class="pt-4">
+  <button class="btn btn-primary" (click)="navigateForm()">Nuevo ubigeo</button>
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Departamento</th>
+      <th scope="col">Provincia</th>
+      <th scope="col">Distrito</th>
+      <th scope="col">Acciones</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let ubigeo of ubigeos">
+      <th scope="row">{{ubigeo.id}}</th>
+      <td>{{ubigeo.departamento}}</td>
+      <td>{{ubigeo.provincia}}</td>
+      <td>{{ubigeo.distrito}}</td>
+      <td>
+        <button class="btn btn-warning mr-2" (click)="editarUbigeo(ubigeo)">Editar</button>
+        <button class="btn btn-danger" (click)="deleteUbigeo(ubigeo.id)">Eliminar</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

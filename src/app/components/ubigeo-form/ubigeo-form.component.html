@@ -1,0 +1,26 @@
+<form [formGroup]="ubigeoForm" (ngSubmit)="saveUbigeo()" class="py-4">
+  <h4 class="mb-2">{{ubigeoService.ubigeoSelected ? 'Editar Ubigeo' : 'Nuevo Ubigeo'}}</h4>
+
+  <div class="form-floating mb-3" *ngIf="!ubigeoService.ubigeoSelected">
+    <input type="text" formControlName="id" class="form-control"placeholder="Ingrese el nombre el codigo">
+    <label>Codigo</label>
+  </div>
+
+  <div class="form-floating mb-3">
+    <input type="text" formControlName="departamento" class="form-control"placeholder="Ingrese el nombre del departamento">
+    <label>Departamento</label>
+  </div>
+
+  <div class="form-floating mb-3">
+    <input type="text" formControlName="provincia" class="form-control" placeholder="Ingrese el nombre de la provincia">
+    <label>Provincia</label>
+  </div>
+
+  <div class="form-floating mb-3">
+    <input type="text" formControlName="distrito" class="form-control" placeholder="Ingrese el nombre del distrito">
+    <label>Distrito</label>
+  </div>
+
+  <button class="btn btn-light mr-2" type="button" (click)="navigateUbigeos()">Cancelar</button>
+  <button class="btn btn-success" type="submit">{{ubigeoService.ubigeoSelected ? 'Actualizar' : 'Guardar'}}</button>
+</form>
